@@ -3,26 +3,26 @@
    <form class="container" onchange="produtoController.validRequired()">
         <div class="form-group">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control required" id="nome" name="quant" placeholder="">
+            <input type="text" class="form-control required" id="nome" name="quant" placeholder="" v-model="produto.nome">
             <span class="textErro">Nome em branco!</span>
         </div>
 
         <div class="form-group">
             <label for="descricao" class="form-label">Descricao</label>
-            <textarea class="form-control required" id="descricao" name="descricao" rows="3"></textarea>
+            <textarea class="form-control required" id="descricao" name="descricao" rows="3" v-model="produto.descricao"></textarea>
             <span class="textErro">Descrição em branco!</span>
         </div>
 
         <div class="form-group">
             <label for="quant" class="form-label">Quantidade</label>
-            <input type="number" class="form-control required" id="quant" name="quant" min="0" placeholder="">
+            <input type="number" class="form-control required" id="quant" name="quant" min="0" placeholder="" v-model="produto.quant">
             <span class="textErro">Quantidade em branco!</span>
         </div>
 
         <div class="form-group">
             <label for="valor" class="form-label">Valor</label>
             <input type="number" class="form-control required" id="valor" name="valor" min="0" step="0.01"
-                placeholder="">
+                placeholder="" v-model="produto.valor">
             <span class="textErro">Valor em branco!</span>
         </div>
 
@@ -39,12 +39,21 @@
                 Produtos</button>
         </div>
     </form>
+    {{produto}}
 </section>
 </template>
 
 <script>
+import Produto from "./Produto";
+
+let produto = new Produto();
 export default {
-    name:"ProdutoFormComponent"
+    name:"ProdutoFormComponent",
+    data(){
+        return{
+            produto
+        }
+    }
 }
 </script>
 
