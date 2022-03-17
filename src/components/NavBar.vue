@@ -35,7 +35,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "NavbarComponents", // Navbar-Components
+};
 </script>
 
 <style scoped>
