@@ -2,6 +2,7 @@
   <div>
     <NavbarComponents />
     <ProdutoFormComponent />
+    <!-- <img src="./assets/logo.png" class="" /> -->
   </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   name: "App",
   components: {
     NavbarComponents,
-    ProdutoFormComponent
+    ProdutoFormComponent,
   },
 };
 </script>
