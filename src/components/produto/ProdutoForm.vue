@@ -83,28 +83,29 @@
           Adicionar
         </button>
         <button type="button" class="btn btn-danger">Cancelar</button>
-        <!-- <button
-          type="button"
-          class="btn btn-danger"
-          onclick="produtoController.getAllProduto()"
-        >
-          Listar Produtos
-        </button> -->
       </div>
     </form>
     {{ produto }}
+    <ProdutoListComponent />
   </section>
 </template>
 
 <script>
 import Produto from "./Produto";
+import ProdutoListComponent from "./ProdutoList.vue";
+
 let produto = new Produto();
+let produtos = [];
 
 export default {
   name: "ProdutoFormComponent",
+  components: {
+    ProdutoListComponent,
+  },
   data() {
     return {
       produto,
+      produtos,
     };
   },
   methods: {
